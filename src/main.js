@@ -2,12 +2,16 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "@/assets/main.pcss";
+import * as Sentry from "@sentry/vue";
+import { BrowserTracing } from "@sentry/tracing";
 
 const app = createApp(App);
 
 Sentry.init({
     app,
     dsn: "https://01f9258923bf43459d8bd45a1f181055@o4504544152256512.ingest.sentry.io/4504544165298176",
+    logErrors: true,
+    release: __SENTRY_RELEASE__,
     integrations: [
         new BrowserTracing({
             routingInstrumentation: Sentry.vueRouterInstrumentation(router),
