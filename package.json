@@ -9,6 +9,8 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "@sentry/tracing": "^7.31.1",
+    "@sentry/vue": "^7.31.1",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12"
   },
