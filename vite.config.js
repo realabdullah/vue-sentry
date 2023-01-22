@@ -13,7 +13,7 @@ const sentryConfig = {
   project: "vue-sentry",
   release: `${process.env.npm_package_name}@${process.env.npm_package_version}`,
   setCommits: {
-    // auto: true
+    auto: true
   },
   sourceMaps: {
     include: ["./dist/assets"],
