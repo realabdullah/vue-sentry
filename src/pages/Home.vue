@@ -1,6 +1,6 @@
 <script setup>
 const throwErr = () => {
-  throw new Error('This is an intentionally thrown error')
+  alert('Error')
 }
 </script>
 
