@@ -1,9 +1,30 @@
 <script setup>
-  const routes = {};
+import * as Sentry from "@sentry/vue";
 
-  const alertSentry = () => {
-    sendAlertToSentry();
-  }
+const paost = {
+  id: "099",
+  title: "Bulablalabu",
+  body: "just some random texts as our article body...."
+};
+
+// sending whole object
+// Sentry.setContext("Post", post);
+
+// In cases where you don't want to pass an entire object but just a few properties
+Sentry.setContext("Post", {
+  id: "099",
+  title: "Bulablalabu", // setting title property changes the context heading in sentry to this
+  postTitle: "our text...." // we can do this instead
+})
+
+// Or setting a single string using setTag
+Sentry.setTag("aString", "stringValue");
+
+const routes = {};
+
+const alertSentry = () => {
+  sendAlertToSentry();
+}
 </script>
 
 
